@@ -2,10 +2,12 @@
 // FUNCIONS --------------------------------------------------
 let decreaseBox = () => {
 	// TODO set the box with to 100 px
+	document.getElementById('box').style.minWidth ='100px';
 };
 
 let increaseBox = () => {
 	// TODO set the box with to 300 px
+	document.getElementById('box').style.minWidth ='300px';
 };
 
 // MAIN --------------------------------------------------

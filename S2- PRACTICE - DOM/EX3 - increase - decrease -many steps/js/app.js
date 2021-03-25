@@ -7,12 +7,23 @@ let decreaseBox = () => {
 	// TODO : decrease the box width of STEP (100 px)
 	// WARNING : don't do it if the size is already the MIN SIZE
 	// TIP : to set the style.width, don't forget to add the "px" at the end
+	if (currentWidth>MIN_SIZE){
+		currentWidth -=100;
+		let cut_Width =document.getElementById('box');
+		cut_Width.style.width =currentWidth + 'px';
+	}
 };
 
 let increaseBox = () => {
 	// TODO : increase the box width of STEP (100 px)
 	// WARNING : don't do it if the size is already the MAX SIZE
 	// TIP : to set the style.width, don't forget to add the "px" at the end
+	if (currentWidth<MAX_SIZE){
+		currentWidth +=100;
+		let add_Width =document.getElementById('box');
+		add_Width.style.width =currentWidth + 'px';
+
+	}
 };
 
 // MAIN --------------------------------------------------
