@@ -6,17 +6,21 @@
 
 <script>
 
-function mouseOver() {
-	// TODO change the text color of demo to RED
-}
+		function mouseOver() {
+			// TODO change the text color of demo to RED
+			document.getElementById('demo').style.color ='red';	
+		}
 
-function mouseOut() {
-	// TODO change the text color of demo to BLACK
-}
+		function mouseOut() {
+			// TODO change the text color of demo to BLACK
+			document.getElementById('demo').style.color ='black';
+		}
 
-let demoText = document.getElementById("demo");
+		let demoText = document.getElementById("demo");
 
-// TODO Listen to mouse over and mouse out on the <p> demo
+		// TODO Listen to mouse over and mouse out on the <p> demo
+		demoText.addEventListener('mouseover', mouseOver)
+		demoText.addEventListener('mouseout', mouseOut)
 
 </script>
 </body>

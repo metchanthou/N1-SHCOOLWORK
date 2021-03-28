@@ -1,3 +1,10 @@
+// 
+const bookDelete= document.querySelectorAll('li');
+bookDelete.forEach( item =>{
+  item.addEventListener('click',()=>{
+    item.remove();
+  })
+});
 //  FUNCTIONS -------------------------------------------------------------
 function deleteBook(event) {
 	
@@ -10,15 +17,31 @@ function addBook(event) {
   event.preventDefault();
 
   // 1- Get the book name from the input field
- 
-  // 2- Create a new spam bookName for the book name, class name = name
+  const get_bookNAME =document.getElementById('add-book-textfield');
 
+  // 2- Create a new spam bookName for the book name, class name = name
+  const bookName =document.createElement('span');
+  bookName.classList.add('name');
+  bookName.textContent =get_bookNAME;
 
   // 3- Create a new spam deleteBtn for the button delete, class name = delete
+  const deleteBtn =document.createElement('span');
+  deleteBtn.classList.add('delete');
 
   // 4- Create a new li
+  const new_Li =document.createElement('li');
+  const getUl =document.querySelector('#book-list ul');
 
   // 5- Add bookName and deleteBtn to li and li to the  bookList UL
+  new_Li.appendChild(bookName);
+  new_Li.appendChild(deleteBtn);
+  getUl.appendChild(new_Li);
+  document.addEventListener('keyup', event =>{
+    if (event.key ==='+ Addr'){
+      const name =document.querySelector('add-book-textfield');
+      // console.log(name.textContent.value)
+    }
+  })
 
 }
 
@@ -30,7 +53,7 @@ function searchBook(event) {
     // Update the style of the LI (visible or hidden)
    
   }
-}
+
 
 
 

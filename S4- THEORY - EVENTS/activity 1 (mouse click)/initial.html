@@ -6,7 +6,7 @@
       This example uses the addEventListener() method to attach a click event to
       a button.
     </p>
-    <hr />
+    <hr/>
     <button id="myButton">Who is the best?</button>
     <button id="myButtonClear">Clear</button>
     <p id="text"></p>
@@ -15,15 +15,37 @@
       // Answer below questions and submit on google classroom
 
       // Q1	 When is the function displayRonanBest called?
+          //__ The function displayRonanBest called when we click on button ('who is the best').
 
       // Q2	 Which line of code LINK the EVENT on mouse to the call to the FUNCTION?
+          //__ Line of code LINK the EVENT on mouse to the call to the FUNCTION is :
+          //  (myButton.addEventListener("click", displayRonanBest);)
+
 
       // Q3	 Add a new button “Clear” to clear the message “ronan is the best”
-
+      function deleteRonan(){
+        let clearRonan =document.getElementById("text");
+        clearRonan.remove();
+      } 
       // BONUS FOR CRAZY CODERS !!
       // Q4	Add a new button “Random color”
       // When clicking on who is the best, select randomly a color in a list of color and set the background
       // color of the whole document
+      let btnRandomColor =document.createElement('button');
+      btnRandomColor.classList.add('color')
+      btnRandomColor.textContent ='Random Color';
+      document.body.appendChild(btnRandomColor);
+
+      function randomColor() {
+        let colorList="0123456789abcdef";
+        const Color_length=6;
+        let color="";
+        for (let i=0;i<Color_length;i++){
+          let indexColor=Math.floor(Math.random()*colorList.length);
+          color+=colorList[indexColor];
+        }
+        document.body.style.background="#"+color;
+      }
 
       function displayRonanBest() {
         let text = document.getElementById("text");
@@ -32,6 +54,12 @@
 
       let myButton = document.getElementById("myButton");
       myButton.addEventListener("click", displayRonanBest);
+
+      let myClear =document.getElementById("myButtonClear");
+      myClear.addEventListener('click',deleteRonan);
+
+      let myColor =document.querySelector('.color');
+      myColor.addEventListener('click', randomColor);
 
     </script>
   </body>
